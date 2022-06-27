@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_recyclerview">
+
+    <fragment
+        android:id="@+id/nav_mybase"
+        android:name="com.example.navigationview.ui.mybase.MybaseFragment"
+        android:label="我的"
+        tools:layout="@layout/fragment_mybase" />
+
+    <fragment
+        android:id="@+id/nav_recyclerview"
+        android:name="com.example.navigationview.ui.recyclerview.RecyclerViewFragment"
+        android:label="循环展示"
+        tools:layout="@layout/fragment_recyclerview" />
+
+    <fragment
+        android:id="@+id/nav_pytorch"
+        android:name="com.example.navigationview.ui.pytorch.pytorchFragment"
+        android:label="深度学习图片检测"
+        android:layout="@layout/pytorch_fragment" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.example.navigationview.ui.pytorch.CameraFragment"
+        android:label="深度学习实时监测"
+        android:layout="@layout/fragment_camera" />
+
+
+
+</navigation>

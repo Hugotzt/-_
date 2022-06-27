@@ -1,0 +1,6 @@
+./vscode
+demo_1/__pycache__
+demo_1/migrations
+demo_1/pytorch/__pycache__
+python_django/__pycache__
+./static

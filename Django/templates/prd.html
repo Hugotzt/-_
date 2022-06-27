@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>预测界面</title>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data" action="{% url 'prd' %}">
+        <label>请选择一张图像</label><br/>
+        <input name="img" type="file"> {% csrf_token %}
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>选择功能</title>
+    <style type="text/css">
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- 识虫 -->
+        <form action="{% url 'show_prd' %}" method="get">
+            <input type="submit" value="识虫"><br>
+        </form>
+
+        <!-- 识虫结果 -->
+        <form action="{% url 'show_results' %}" method="get">
+            <input type="submit" value="识虫结果"><br>
+        </form>
+        <!-- 数据分析 -->
+        <form action="{% url 'show_analysis' %}" method="get">
+            <input type="submit" value="数据分析"><br>
+        </form>
+        <!-- 用户反馈 -->
+        <form action="{% url 'show_fb' %}" method="get">
+            <input type="submit" value="用户反馈"><br>
+        </form>
+    </div>
+</body>
+
+</html>

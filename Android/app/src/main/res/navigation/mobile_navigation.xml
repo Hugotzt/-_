@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.navigationview.ui.home.HomeFragment"
+        android:label="基于深度学习的昆虫识别APP"
+        tools:layout="@layout/fragment_home"/>
+
+
+    <fragment
+        android:id="@+id/nav_pytorch"
+        android:name="com.example.navigationview.ui.pytorch.pytorchFragment"
+        android:label="深度学习"
+        android:layout="@layout/pytorch_fragment" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.example.navigationview.ui.pytorch.CameraFragment"
+        android:label="实时识别"
+        android:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_atlas"
+        android:name="com.example.navigationview.ui.atlas.AtlasFragment"
+            android:label="查看图鉴"
+        android:layout="@layout/fragment_atlas" />
+
+    <fragment
+        android:id="@+id/nav_change"
+        android:name="com.example.navigationview.ui.recyclerview.ChangeFragment"
+        android:label="修改记录"
+        android:layout="@layout/fragment_change" />
+
+    <fragment
+        android:id="@+id/nav_input"
+        android:name="com.example.navigationview.ui.atlas.InputFragment"
+        android:label="添加图鉴"
+        android:layout="@layout/fragment_input" />
+
+    <fragment
+        android:id="@+id/nav_cgatlas"
+        android:name="com.example.navigationview.ui.atlas.CgatlasFragment"
+        android:label="修改图鉴"
+        android:layout="@layout/fragment_cgatlas" />
+
+    <fragment
+        android:id="@+id/nav_view"
+        android:name="com.example.navigationview.ui.atlas.ViewFragment"
+        android:label="图鉴详情"
+        android:layout="@layout/fragment_view" />
+
+    <fragment
+        android:id="@+id/nav_banben"
+        android:label="版本"
+        android:layout="@layout/fragment_banben"
+        android:name="com.example.navigationview.ui.atlas.BanbenFragment"/>
+    <fragment
+        android:id="@+id/nav_feedback"
+        android:label="意见与反馈"
+        android:layout="@layout/fragment_feedback"
+        android:name="com.example.navigationview.ui.home.FeedbackFragment"/>
+
+</navigation>

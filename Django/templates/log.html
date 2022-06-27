@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    
+</head>
+
+<body>
+    <div id='log'>
+        <form action="{% url 'log' %}" method="get">
+            <label>请刷卡</label><br/>
+            <label>卡号:</label>
+            <input name="card_id" :value="[card.card_id]" type="text"><br>
+            <input type="submit" value="确认"><br>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/iview.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
+    <script src="{% static 'js/mqtt.js' %}"></script>
+
+    <script>
+        const myVue = new Vue({
+            el: '#log',
+            data: {
+                card: {
+                    card_id: '请获取卡号',
+                    topic: '/card',
+                    url: 'ws://192.168.44.1:8083/mqtt',
+                    options: {
+                        username: '000',
+                        password: '000',
+                        clientId: 'tzt_vue' + new Date().getTime(),
+                        clean: true,
+                        port: 8083,
+                    },
+                },
+            },
+            created() {
+                this.mqttConf();
+            },
+            methods: {
+                mqttConf() {
+                    var client = mqtt.connect(this.card.url, this.card.options);
+                    var that = this;
+                    client.on('connect', function() {
+                        client.subscribe(that.card.topic, {
+                            qos: 2
+                        }, (err) => {
+                            if (!err) {
+                                console.log('订阅成功:', myVue.card.topic)
+                            } else {
+                                console.log('订阅失败:', myVue.card.topic, err)
+                            }
+                        })
+                    });
+                    client.on('message', function(topic, message) {
+                        // 接收到消息
+                        that.card.card_id = message.toString()
+                    });
+                }
+            },
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>识别记录</title>
+    <style type="text/css">
+        .head {
+            margin-left: 200px;
+            font-size: 30px;
+        }
+        
+        .content {
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">识别记录</div>
+    <div>
+        <table>
+            <th>用户</th>
+            <th>识虫类别</th>
+            <th>识虫时间</th>
+            <th>图片</th>
+            {% for data in data_list %}
+            <tr>
+                <td class="content">{{data.place}}</td>
+                <td class="content">{{data.label}}</td>
+                <td class="content">{{data.publishertime}}</td>
+                <td class="content"><img src="{% static 'images/' %}{{data.imgpath}}" width="200px" height="200px" /></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <form action="{% url 'user' %}" method="get">
+            <input type="submit" value="用户记录" />
+        </form>
+        <form action="{% url 'admin' %}" method="get">
+            <input type="submit" value="管理员记录" />
+        </form>
+    </div>
+</body>
+
+</html>

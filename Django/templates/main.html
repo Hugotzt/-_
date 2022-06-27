@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+
+</head>
+
+<body>
+    <div>
+        <!-- 登录 -->
+        <form action="{% url 'show_log' %}" method="get">
+            <input type="submit" value="登录"><br>
+        </form>
+        <!-- 注册 -->
+        <form action="{% url 'show_register' %}" method="get">
+            <input type="submit" value="注册"><br>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>问题反馈</title>
+    <style type="text/css">
+        .head {
+            margin-left: 200px;
+            font-size: 30px;
+        }
+        
+        .content {
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">反馈记录</div>
+    <div>
+        <table>
+            <th>反馈标题</th>
+            <th>反馈时间</th>
+            <th>反馈人电话号码</th>
+            <th>反馈内容</th>
+            {% for data in data_list %}
+            <tr>
+                <td class="content">{{data.theme}}</td>
+                <td class="content">{{data.time}}</td>
+                <td class="content">{{data.phone}}</td>
+                <td class="content">{{data.sug}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
